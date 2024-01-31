@@ -1,0 +1,21 @@
+{
+    "name": "somosdevs/falconcrm",
+    "description": "Sistema CRM para vendas",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Gabriel P.",
+            "email": "pereiragabrieldev@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php":">=7.2"
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}
