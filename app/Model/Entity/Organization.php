@@ -12,10 +12,10 @@ class Organization
     /**
      * @var string
      */
-    public $name = "Somos dev's";
+    public $name = "Somos dev's - Passado da Model/Entity/Organizatio";
 
     /**
      * @var string
      */
-    public $descricao = "passando dados";
+    public $descricao = "Descrissao passada da Model/Entity/Organization";
 }
