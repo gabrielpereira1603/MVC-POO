@@ -4,7 +4,7 @@ use \app\Http\Response;
 use \app\Controller\Pages;
 
 //ROTA HOME
-$obRouter->get('/', [
+$obRouter->get('/',[
     function() {
         return new Response(200,Pages\Home::getHome());
     }

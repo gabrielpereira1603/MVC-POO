@@ -3,7 +3,7 @@
         'name' => 'somosdevs/falconcrm',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '4755afddba28798e6e9d7dda952d158e809ff38e',
+        'reference' => '9aa15f3ab313e3cde241363c2c14e8b12bad8b31',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'somosdevs/falconcrm' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '4755afddba28798e6e9d7dda952d158e809ff38e',
+            'reference' => '9aa15f3ab313e3cde241363c2c14e8b12bad8b31',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

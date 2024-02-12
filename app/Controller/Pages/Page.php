@@ -13,7 +13,7 @@ class Page{
     private static function getHeader() {
         return View::render('Pages/header');
     }
-        /**
+    /**
      * Metodo responsavel por renderizar o footer da pagina
      * @return string
      */
@@ -23,8 +23,8 @@ class Page{
 
     /**
      * Metodo responsavel por renderizar o layout de paginacao
-    //  * @param Request $request
-    //  * @param Pagination $obPagination
+     * @param Request $request
+     * @param Pagination $obPagination
      * @return string
      */
     public static function getPagination($request,$obPagination) {
@@ -64,6 +64,7 @@ class Page{
             'links' => $links
         ]);
     }
+    
     /**
      * Metodo responsavel por retorna o conteudo da (view) da nossa pagina generica
      */

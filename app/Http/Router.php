@@ -5,6 +5,7 @@ namespace app\Http;
 use \Closure;
 use \Exception;
 use \ReflectionFunction;
+use \app\Http\Middleware\Queue as MiddlewareQueue;
 
 class Router {
     /**
@@ -67,6 +68,9 @@ class Router {
                 continue;
             }
         }
+
+        //MIDDLEWARES DA ROTA
+        $params['middlewares'] = $params['middlewares'] ?? [];
 
         //VARIVEIS DA ROTA
         $params['variables'] = [];
@@ -200,8 +204,9 @@ class Router {
                 $args[$name] = $route['variables'][$name] ?? null;
             }
 
-            //RETORNA A EXECUCAO DA FUNCAO
-            return call_user_func_array($route['controller'],$args);
+
+            //RETORNA A EXECUCAO DA FILA DE MIDDLEWARES
+            return (new MiddlewareQueue($route['middlewares'],$route['controller'],$args))->next($this->request);
         }catch(Exception $e){
             return new Response($e->getCode(), $e->getMessage());   
         }
@@ -213,5 +218,18 @@ class Router {
      */
     public function getCurrentUrl() {
         return $this->url.$this->getUri();
+    }
+
+    /**
+     * Metodo responsavel por redirecionar a URL
+     * @param string
+     */
+    public function redirect($route){
+        //URL
+        $url = $this->url.$route;
+        
+        //EXECURA O REDIRECT
+        header('location: '.$url);
+        exit;
     }
 }
